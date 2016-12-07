@@ -33,7 +33,7 @@ public class ImageProcessActivity extends AppCompatActivity implements View.OnCl
     private static int output_X = 400;
     private static int output_Y = 400;
     /* 头像文件 */
-    private static final String IMAGE_FILE_NAME = "E-Traning_head_image.jpg";
+    private static final String IMAGE_FILE_NAME = "testImage.jpg";
 
     Button button;
     ImageView imageView;
@@ -62,6 +62,10 @@ public class ImageProcessActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void setGifIntoImageView() {
+        //可以使用任何ImageView支持的方式设置图片
+        imageView.setImageResource(R.drawable.lead_bg1);//可双击2.5倍放大，可滑动
+        //or 你还能使用第三方图片加载库加载图片，如ImageLoader
+//        imageLoader.displayImage("http://host.com/my_pic.jpg", imageView);
 
     }
 
