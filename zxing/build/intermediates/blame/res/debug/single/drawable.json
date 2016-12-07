@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\D\\androidstudio\\workspace\\Demo1\\zxing\\build\\intermediates\\res\\merged\\debug\\drawable\\launcher_icon.png",
+        "source": "C:\\D\\androidstudio\\workspace\\Demo1\\zxing\\src\\main\\res\\drawable\\launcher_icon.png"
+    },
+    {
+        "merged": "C:\\D\\androidstudio\\workspace\\Demo1\\zxing\\build\\intermediates\\res\\merged\\debug\\drawable\\share_via_barcode.png",
+        "source": "C:\\D\\androidstudio\\workspace\\Demo1\\zxing\\src\\main\\res\\drawable\\share_via_barcode.png"
+    }
+]

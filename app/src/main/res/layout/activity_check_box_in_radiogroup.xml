@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_check_box_in_radiogroup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mine.demo1.checkbox_in_radiogroup.CheckBoxInRadiogroupActivity">
+
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="104dp" >
+        <CheckBox
+            android:id="@+id/check1"
+            android:button="@drawable/checked_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选项1"
+            />
+        <CheckBox
+            android:id="@+id/check2"
+            android:button="@drawable/checked_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选项2"
+            />
+        <CheckBox
+            android:id="@+id/check3"
+            android:button="@drawable/checked_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选项3"
+            />
+        <CheckBox
+            android:id="@+id/check4"
+            android:button="@drawable/checked_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选项4"
+            />
+    </RadioGroup>
+</RelativeLayout>

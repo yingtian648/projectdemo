@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_image_process"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mine.demo1.imageprocess.ImageProcessActivity">
+
+    <Button
+        android:id="@+id/choose_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/course_num_after"
+        android:text="选择照片"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <mine.demo1.imageprocess.PinchImageView
+            android:id="@+id/img_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
+
+            <include layout="@layout/layout_draggroup"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                />
+    </RelativeLayout>
+
+</LinearLayout>
