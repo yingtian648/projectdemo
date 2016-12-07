@@ -1,38 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="mine.demo1.MainActivity">
-    <include layout="@layout/layout_head"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/include_player"
-        />
-    <include layout="@layout/layout_center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/include_player"
-        />
+
     <Button
-        android:id="@+id/btnshow"
+        android:id="@+id/button1"
+        android:textAllCaps="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="输入笔记"
-        android:layout_alignParentBottom="true"
-        />
-    <RelativeLayout
-        android:visibility="gone"
+        android:text="button1" />
+
+    <Button
+        android:id="@+id/button2"
+        android:textAllCaps="false"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#80000000"
-        android:id="@+id/sv"
-        >
-        <include layout="@layout/layout_foot"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            />
-    </RelativeLayout>
-</RelativeLayout>
+        android:layout_height="wrap_content"
+        android:text="button2" />
+
+    <Button
+        android:id="@+id/button3"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="button3" />
+
+    <Button
+        android:id="@+id/button4"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="button4" />
+
+    <Button
+        android:id="@+id/button5"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="button5" />
+
+    <Button
+        android:id="@+id/button6"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="button6" />
+
+    <Button
+        android:id="@+id/button7"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="button7" />
+
+    <Button
+        android:id="@+id/button8"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="button8" />
+
+    <Button
+        android:id="@+id/button9"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="button9" />
+
+    <Button
+        android:id="@+id/button10"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="viewpager_pinchimageview" />
+
+    <Button
+        android:id="@+id/button11"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="button11" />
+
+</LinearLayout>

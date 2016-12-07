@@ -43,9 +43,9 @@ public class EApplication extends LitePalApplication {
     public void onCreate() {
         super.onCreate();
         gson = new Gson();
-        CrashHandle crashHandler = CrashHandle.getInstance();
-        // 注册crashHandler
-        crashHandler.init(getApplicationContext());
+//        CrashHandle crashHandler = CrashHandle.getInstance();
+//        // 注册crashHandler
+//        crashHandler.init(getApplicationContext());
         dataMap = new HashMap<>();
         initHttps();
         initImageLoader();

@@ -3,15 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <LinearLayout
+    <mine.demo1.imageprocess.PinchImageView
+        android:id="@+id/piv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn">
-
-        <ListView
-            android:id="@+id/lv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"></ListView>
-    </LinearLayout>
+        android:layout_height="match_parent"
+        />
 </LinearLayout>

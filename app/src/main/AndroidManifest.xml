@@ -21,7 +21,13 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".loadbackshow.LoadActivity" />
         <activity android:name=".demoLogin.SecoundActivity" />
         <activity android:name=".demoLogin.ThirdActivity" />
@@ -31,15 +37,10 @@
         <activity android:name=".calender.CalenderTestActivity" />
         <activity android:name=".pulltorefresh.PullToRefreshActivity" />
         <activity android:name=".checkbox_in_radiogroup.CheckBoxInRadiogroupActivity" />
-        <activity android:name=".dialog.DialogDemoActivity"></activity>
-        <activity android:name=".imageprocess.ImageProcessActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".two_dimension_code.TwoDimenCodeActivity"></activity>
+        <activity android:name=".dialog.DialogDemoActivity" />
+        <activity android:name=".imageprocess.ImageProcessActivity"></activity>
+        <activity android:name=".two_dimension_code.TwoDimenCodeActivity" />
+        <activity android:name=".viewpager_pinchimageview.PagerPinchActivity"></activity>
     </application>
 
 </manifest>
