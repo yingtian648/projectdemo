@@ -8,9 +8,7 @@ import android.widget.ImageView;
 import mine.demo1.imageprocess.PinchImageView;
 
 /**
- * 蜂鸟网的图片素材
- *
- * http://www.fengniao.com/
+ * 图片素材
  *
  * @author clifford
  */

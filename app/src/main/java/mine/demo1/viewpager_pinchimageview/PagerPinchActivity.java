@@ -1,8 +1,6 @@
 package mine.demo1.viewpager_pinchimageview;
 
-import android.provider.Settings;
 import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,12 +10,9 @@ import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 
 import mine.demo1.R;
-import mine.demo1.adapter.PagerPinchAdapter;
 import mine.demo1.imageprocess.PinchImageView;
 
 public class PagerPinchActivity extends AppCompatActivity{
@@ -25,7 +20,6 @@ public class PagerPinchActivity extends AppCompatActivity{
     private TextView tvTitle;
     private PinchImageViewPager pinchPager;
     private int[] imgIDs = {R.drawable.lead_bg1,R.drawable.lead_bg2,R.drawable.lead_bg3};
-    private PinchImageView imageView1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

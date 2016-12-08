@@ -25,8 +25,13 @@ import mine.demo1.two_dimension_code.TwoDimenCodeActivity;
 import mine.demo1.viewpager_pinchimageview.PagerPinchActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    //按钮
     private int[] ids = {R.id.button1, R.id.button2, R.id.button3, R.id.button4, R.id.button5, R.id.button6
             , R.id.button7, R.id.button8, R.id.button9, R.id.button10, R.id.button11};
+    //跳转页面
+    private Class [] classes = {CalenderTestActivity.class,CheckBoxInRadiogroupActivity.class,CircleProgressbarActivity.class
+    ,FirstActivity.class,Dialog.class,ChooseImgActivity.class,ImageProcessActivity.class,PullToRefreshActivity.class
+    ,TwoDimenCodeActivity.class,PagerPinchActivity.class};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,47 +40,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         for (int i = 0; i < ids.length; i++) {
             findViewById(ids[i]).setOnClickListener(this);
         }
-
     }
 
     @Override
     public void onClick(View v) {
-        Class activityClass = null;
-        switch (v.getId()) {
-            case R.id.button1:
-                activityClass = CalenderTestActivity.class;
-                break;
-            case R.id.button2:
-                activityClass = CheckBoxInRadiogroupActivity.class;
-                break;
-            case R.id.button3:
-                activityClass = CircleProgressbarActivity.class;
-                break;
-            case R.id.button4:
-                activityClass = FirstActivity.class;
-                break;
-            case R.id.button5:
-                activityClass = Dialog.class;
-                break;
-            case R.id.button6:
-                activityClass = ChooseImgActivity.class;
-                break;
-            case R.id.button7:
-                activityClass = ImageProcessActivity.class;
-                break;
-            case R.id.button8:
-                activityClass = PullToRefreshActivity.class;
-                break;
-            case R.id.button9:
-                activityClass = TwoDimenCodeActivity.class;
-                break;
-            case R.id.button10:
-                activityClass = PagerPinchActivity.class;
-                break;
-            case R.id.button11:
-                break;
+        for (int i = 0; i < ids.length; i++) {
+            if (v.getId() == ids[i]) {
+                goToNextActivity(classes[i]);
+            }
         }
-        goToNextActivity(activityClass);
     }
     private void goToNextActivity(Class activityClass){
         Intent intent = new Intent(this,activityClass);
