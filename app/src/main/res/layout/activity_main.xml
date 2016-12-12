@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="mine.demo1.MainActivity">
+    <Button
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="退出"
+        />
     <ListView
         android:id="@+id/mian_lv"
         android:layout_width="match_parent"

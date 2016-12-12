@@ -50,6 +50,7 @@ public class EApplication extends LitePalApplication {
         initHttps();
         initImageLoader();
     }
+
     //配置universal_Image_loader
     private void initImageLoader() {
         //1.配置图片显示信息
