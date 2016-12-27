@@ -97,7 +97,6 @@
             </intent-filter>
         </receiver>
 
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -119,7 +118,8 @@
         <activity android:name=".two_dimension_code.TwoDimenCodeActivity" />
         <activity android:name=".viewpager_pinchimageview.PagerPinchActivity" />
         <activity android:name=".notification_push.XinGeNotificationActivity" />
-        <activity android:name=".notification_push.JiGuangNotificationActivity"></activity>
+        <activity android:name=".notification_push.JiGuangNotificationActivity" />
+        <activity android:name=".tecentcloudvideo.TecendCloudVideoActivity"></activity>
     </application>
 
 </manifest>

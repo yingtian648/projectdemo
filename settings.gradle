@@ -1,1 +1,3 @@
-include ':app', ':baidupush'
+include ':app', ':baidupush', ':twodimendemo'
+include ':zxinglib'
+include ':zxing'

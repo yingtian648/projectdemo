@@ -11,6 +11,9 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/baidupush" />
+            <option value="$PROJECT_DIR$/twodimendemo" />
+            <option value="$PROJECT_DIR$/zxing" />
+            <option value="$PROJECT_DIR$/zxinglib" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
