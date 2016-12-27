@@ -14,6 +14,7 @@ public final class R {
 		public static final int transparent = 0x7f060003;
 		public static final int viewfinder_laser = 0x7f060004;
 		public static final int viewfinder_mask = 0x7f060005;
+		public static final int white = 0x7f060006;
 	}
 	public static final class drawable {
 		public static final int launcher_icon = 0x7f020000;
@@ -27,7 +28,6 @@ public final class R {
 		public static final int restart_preview = 0x7f070004;
 		public static final int return_scan_result = 0x7f070005;
 		public static final int status_view = 0x7f070008;
-		public static final int tv_cancel = 0x7f070009;
 		public static final int viewfinder_view = 0x7f070007;
 	}
 	public static final class layout {

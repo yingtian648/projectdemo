@@ -61,7 +61,6 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     private InactivityTimer inactivityTimer;
     private BeepManager beepManager;
     private AmbientLightManager ambientLightManager;
-    private TextView cancelBtn;
 
     ViewfinderView getViewfinderView() {
         return viewfinderView;
@@ -82,19 +81,6 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_zxing_capture);
-
-
-        cancelBtn = (TextView) findViewById(R.id.tv_cancel);
-        cancelBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("----------->","取消扫码");
-                if(cameraManager.isOpen()){
-                    cameraManager.closeDriver();
-                }
-                finish();
-            }
-        });
 
         hasSurface = false;
         inactivityTimer = new InactivityTimer(this);

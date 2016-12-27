@@ -6,6 +6,7 @@
     <color name="transparent">#00000000</color>
     <color name="viewfinder_laser">#ffcc0000</color>
     <color name="viewfinder_mask">#60000000</color>
+    <color name="white">#ffffff</color>
     <item name="decode" type="id"/>
     <item name="decode_failed" type="id"/>
     <item name="decode_succeeded" type="id"/>

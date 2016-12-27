@@ -26,6 +26,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -153,6 +154,26 @@ public final class ViewfinderView extends View {
                     frame.top - POINT_SIZE,
                     frame.right + POINT_SIZE,
                     frame.bottom + POINT_SIZE);
+
+            /** 修改开始 */
+            //画出四个角
+            paint.setColor(getResources().getColor(R.color.white));
+            // 左上角
+            canvas.drawRect(frame.left, frame.top, frame.left + 15, frame.top + 5, paint);
+            canvas.drawRect(frame.left, frame.top, frame.left + 5, frame.top + 15, paint);
+            //右上角
+            canvas.drawRect(frame.right - 15, frame.top, frame.right, frame.top + 5, paint);
+            canvas.drawRect(frame.right - 5, frame.top, frame.right, frame.top + 15, paint);
+            //左下角
+            canvas.drawRect(frame.left, frame.bottom - 5, frame.left + 15, frame.bottom, paint);
+            canvas.drawRect(frame.left, frame.bottom - 15, frame.left + 5, frame.bottom, paint);
+            //右下角
+            canvas.drawRect(frame.right - 15, frame.bottom - 5, frame.right, frame.bottom, paint);
+            canvas.drawRect(frame.right - 5, frame.bottom - 15, frame.right, frame.bottom, paint);
+            /** 修改结束四个角 */
+
+            /** 修改结束扫码线 */
+
         }
     }
 

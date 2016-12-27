@@ -27,6 +27,8 @@ import android.view.WindowManager;
 
 import com.google.zxing.client.android.PreferencesActivity;
 
+import static com.google.zxing.client.android.camera.CameraConfigurationUtils.findBestPreviewSizeValue;
+
 /**
  * A class which deals with reading, parsing, and setting the camera parameters which are used to
  * configure the camera hardware.
@@ -54,31 +56,33 @@ final class CameraConfigurationManager {
         display.getSize(theScreenResolution);
         screenResolution = theScreenResolution;
         Log.i(TAG, "Screen resolution: " + screenResolution);
-        cameraResolution = CameraConfigurationUtils.findBestPreviewSizeValue(parameters, screenResolution);
+        /** 修改片段 */
+        Point screenResolutionForCamera = new Point();
+        screenResolutionForCamera.x = screenResolution.x;
+        screenResolutionForCamera.y = screenResolution.y;
+        if (screenResolution.x < screenResolution.y) {
+            screenResolutionForCamera.x = screenResolution.y;
+            screenResolutionForCamera.y = screenResolution.x;
+        }
+//        cameraResolution = findBestPreviewSizeValue(parameters, screenResolution);
+        cameraResolution = findBestPreviewSizeValue(parameters,screenResolutionForCamera);
         Log.i(TAG, "Camera resolution: " + cameraResolution);
     }
 
     void setDesiredCameraParameters(Camera camera, boolean safeMode) {
         Camera.Parameters parameters = camera.getParameters();
-
         // yumin
         camera.setDisplayOrientation(90);
-
         if (parameters == null) {
             Log.w(TAG, "Device error: no camera parameters are available. Proceeding without configuration.");
             return;
         }
-
         Log.i(TAG, "Initial camera parameters: " + parameters.flatten());
-
         if (safeMode) {
             Log.w(TAG, "In camera config safe mode -- most settings will not be honored");
         }
-
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-
         initializeTorch(parameters, prefs, safeMode);
-
         CameraConfigurationUtils.setFocus(
                 parameters,
                 prefs.getBoolean(PreferencesActivity.KEY_AUTO_FOCUS, true),
@@ -110,7 +114,7 @@ final class CameraConfigurationManager {
 
         Camera.Parameters afterParameters = camera.getParameters();
         Camera.Size afterSize = afterParameters.getPreviewSize();
-        if (afterSize!= null && (cameraResolution.x != afterSize.width || cameraResolution.y != afterSize.height)) {
+        if (afterSize != null && (cameraResolution.x != afterSize.width || cameraResolution.y != afterSize.height)) {
             Log.w(TAG, "Camera said it supported preview size " + cameraResolution.x + 'x' + cameraResolution.y +
                     ", but after setting it, preview size is " + afterSize.width + 'x' + afterSize.height);
             cameraResolution.x = afterSize.width;
