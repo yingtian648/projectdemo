@@ -34,7 +34,9 @@ import mine.demo1.head.ChooseImgActivity;
 import mine.demo1.imageprocess.ImageProcessActivity;
 import mine.demo1.notification_push.JiGuangNotificationActivity;
 import mine.demo1.notification_push.XinGeNotificationActivity;
+import mine.demo1.okhttpdemo.OKHttpDemoActivity;
 import mine.demo1.pulltorefresh.PullToRefreshActivity;
+import mine.demo1.styledemo.StyleDemoActivity;
 import mine.demo1.two_dimension_code.TwoDimenCodeActivity;
 import mine.demo1.util.LogD;
 import mine.demo1.viewpager_pinchimageview.PagerPinchActivity;
@@ -44,9 +46,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private Class[] classes = {CalenderTestActivity.class, CheckBoxInRadiogroupActivity.class, CircleProgressbarActivity.class
             , FirstActivity.class, Dialog.class, ChooseImgActivity.class, ImageProcessActivity.class, PullToRefreshActivity.class
             , TwoDimenCodeActivity.class, PagerPinchActivity.class, XinGeNotificationActivity.class, JiGuangNotificationActivity.class
-    };
+    , StyleDemoActivity.class, OKHttpDemoActivity.class};
     private String[] demoNames = {"日历", "checkbox在radiogroup的事件", "圆环进度条", "页面跳转", "无背景对话框"
-            , "头像选择", "图片分区压缩", "上拉加载|下拉刷新", "二维码", "viewPager中图片_可放大", "腾讯信鸽", "极光推送"};
+            , "头像选择", "图片分区压缩", "上拉加载|下拉刷新", "二维码", "viewPager中图片_可放大", "腾讯信鸽"
+            ,"极光推送","XML风格","OKHTTP腾讯云视频获取测试"};
     private ListView listView;
     private ArrayAdapter<String> adapter;
 

@@ -216,12 +216,8 @@ public final class CameraManager {
                 // Called early, before init even finished
                 return null;
             }
-//            int width = findDesiredDimensionInRange(screenResolution.x, MIN_FRAME_WIDTH, MAX_FRAME_WIDTH);
-//            int height = findDesiredDimensionInRange(screenResolution.y, MIN_FRAME_HEIGHT, MAX_FRAME_HEIGHT);//原始
-            /** 修改之后的width,height */
-            DisplayMetrics metrics = context.getResources().getDisplayMetrics();
-            int width = (int) (metrics.widthPixels * 0.6);
-            int height = width;
+            int width = findDesiredDimensionInRange(screenResolution.x, MIN_FRAME_WIDTH, MAX_FRAME_WIDTH);
+            int height = findDesiredDimensionInRange(screenResolution.y, MIN_FRAME_HEIGHT, MAX_FRAME_HEIGHT);//原始
 
             int leftOffset = (screenResolution.x - width) / 2;
             int topOffset = (screenResolution.y - height) / 3;

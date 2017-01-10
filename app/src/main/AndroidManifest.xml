@@ -119,7 +119,9 @@
         <activity android:name=".viewpager_pinchimageview.PagerPinchActivity" />
         <activity android:name=".notification_push.XinGeNotificationActivity" />
         <activity android:name=".notification_push.JiGuangNotificationActivity" />
-        <activity android:name=".tecentcloudvideo.TecendCloudVideoActivity"></activity>
+        <activity android:name=".tecentcloudvideo.TecendCloudVideoActivity" />
+        <activity android:name=".styledemo.StyleDemoActivity" />
+        <activity android:name=".okhttpdemo.OKHttpDemoActivity"></activity>
     </application>
 
 </manifest>
