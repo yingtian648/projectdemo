@@ -121,7 +121,8 @@
         <activity android:name=".notification_push.JiGuangNotificationActivity" />
         <activity android:name=".tecentcloudvideo.TecendCloudVideoActivity" />
         <activity android:name=".styledemo.StyleDemoActivity" />
-        <activity android:name=".okhttpdemo.OKHttpDemoActivity"></activity>
+        <activity android:name=".okhttp_qcloud.TecentDemoActivity" />
+        <activity android:name=".okhttp_qcloud.OkHttpActivity"></activity>
     </application>
 
 </manifest>
