@@ -2,6 +2,7 @@ package mine.demo1;
 
 import android.app.Activity;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.google.gson.Gson;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -49,6 +50,7 @@ public class EApplication extends LitePalApplication {
         dataMap = new HashMap<>();
         initHttps();
         initImageLoader();
+        SDKInitializer.initialize(getApplicationContext());//初始化百度地图
     }
 
     //配置universal_Image_loader

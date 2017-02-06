@@ -7,7 +7,11 @@
     android:orientation="vertical"
     android:padding="5dp"
     tools:context="mine.twodimendemo.MainActivity">
-
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="退出" />
     <Button
         android:id="@+id/scan_utf_8"
         android:layout_width="match_parent"

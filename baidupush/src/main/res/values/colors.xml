@@ -3,4 +3,24 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="progress_color_bg">#e4e4e4</color>
+    <color name="progress_color">#FF4081</color>
+    <color name="balck_title">#333333</color> <!-- 标题黑 -->
+    <color name="alert_gray">#909090</color> <!-- 提示框文字颜色 -->
+
+
+
+    <color name="btn_shape_pressed">#e0e0e0</color>
+    <color name="btn_shape_normal">#606060</color>
+    <color name="alpha_black30">#ca4325</color>  <!-- 半透明黑（淡） -->
+
+
+    <color name="alert_btn_bg_normal">#F5F5F5</color>
+    <color name="alert_btn_bg_pressed">#DCDCDC</color>
+    <color name="alert_btn_box">#A9A9A9</color>
+    <color name="course_num_after">#F8512D</color>
+    <color name="btn_pressed_bg">#FF7F50</color>
 </resources>

@@ -16,6 +16,7 @@
 
 package com.google.zxing.client.android;
 
+import android.support.v7.widget.Toolbar;
 import android.view.*;
 
 import com.google.zxing.BarcodeFormat;
@@ -31,6 +32,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -53,7 +55,6 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     private CameraManager cameraManager;
     private CaptureActivityHandler handler;
     private ViewfinderView viewfinderView;
-    private TextView statusView;
     private boolean hasSurface;
     private Collection<BarcodeFormat> decodeFormats;
     private Map<DecodeHintType, ?> decodeHints;
@@ -62,6 +63,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     private BeepManager beepManager;
     private AmbientLightManager ambientLightManager;
 
+    private ImageButton btnBack;
     ViewfinderView getViewfinderView() {
         return viewfinderView;
     }
@@ -97,16 +99,18 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
         // first launch. That led to bugs where the scanning rectangle was the wrong size and partially
         // off screen.
         cameraManager = new CameraManager(getApplication());
-
         viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
         viewfinderView.setCameraManager(cameraManager);
-
-        statusView = (TextView) findViewById(R.id.status_view);
+        btnBack = (ImageButton)findViewById(R.id.button_back);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CaptureActivity.super.onBackPressed();
+            }
+        });
 
         handler = null;
-
         resetStatusView();
-
         SurfaceView surfaceView = (SurfaceView) findViewById(R.id.preview_view);
         SurfaceHolder surfaceHolder = surfaceView.getHolder();
         if (hasSurface) {
@@ -155,7 +159,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 
                 String customPromptMessage = intent.getStringExtra(Intents.Scan.PROMPT_MESSAGE);
                 if (customPromptMessage != null) {
-                    statusView.setText(customPromptMessage);
+//                    statusView.setText(customPromptMessage);
                 }
             }
 
@@ -315,12 +319,11 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     }
 
     private void resetStatusView() {
-        statusView.setText(R.string.zxing_msg_default_status);
-        statusView.setVisibility(View.VISIBLE);
         viewfinderView.setVisibility(View.VISIBLE);
     }
 
     public void drawViewfinder() {
         viewfinderView.drawViewfinder();
     }
+
 }

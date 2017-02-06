@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mine.demo1.expandtab.ExpandTabDemoActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapse_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+            <TextView
+                android:layout_margin="20dp"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/signmd_signbox_ic9"
+                />
+            <!--<android.support.v7.widget.Toolbar-->
+                <!--android:id="@+id/toolbar"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:gravity="top"-->
+                <!--android:minHeight="?attr/actionBarSize"-->
+                <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+                <!--app:titleMarginTop="0dp">-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/toolbar_title"-->
+                    <!--style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:text="海工词典" />-->
+            <!--</android.support.v7.widget.Toolbar>-->
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <CheckBox
+            android:id="@+id/desc_t"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:button="@null"
+            android:drawableRight="@drawable/activedetail_tab_style"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="活动详情"
+            android:textColor="@color/balck_title"
+            android:textSize="14sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            >
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="10dp"
+                android:text="我爱上大考试和大家撒回到家撒谎哈代课教师哈就是的撒建华大街撒谎的空间撒谎后点击爱神的箭爱神的箭撒客户端空间撒谎火炬大厦大街上哈师大金卡和大家撒客户空间哈手机打开挥洒接电话哈涉
+        及到哈时间段会撒娇客户端撒娇客户端好尽快回调吉安市大家安好的撒开奖号尖括号大恒科技撒谎的撒较好的撒娇和大家撒可获得江安河很大空间圣诞节撒谎的撒娇和大家爱护后打开就是大家开始打就是客户端建华
+        大街奥斯卡后打开就是大家爱看回答就是看好大数据库回答是极好的空间啊黄金卡回到家卡仕达"
+                android:textColor="@color/balck_title"
+                android:textSize="12sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+
+        <CheckBox
+            android:id="@+id/actives_t"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:button="@null"
+            android:drawableRight="@drawable/activedetail_tab_style"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="活动场次"
+            android:textColor="@color/balck_title"
+            android:textSize="14sp" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/layout_only_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_only_recyclerview"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/activefile_t"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:button="@null"
+                android:drawableRight="@drawable/activedetail_tab_style"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="活动附件"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/file_linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/activefile_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

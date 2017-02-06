@@ -15,10 +15,12 @@ import com.tencent.android.tpush.XGPushConfig;
 import com.tencent.android.tpush.XGPushManager;
 import com.tencent.android.tpush.service.XGPushService;
 
+import mine.demo1.baidumap.BaiduMapDemoActivity;
 import mine.demo1.calender.CalenderTestActivity;
 import mine.demo1.checkbox_in_radiogroup.CheckBoxInRadiogroupActivity;
 import mine.demo1.circleprogress.CircleProgressbarActivity;
 import mine.demo1.demoLogin.FirstActivity;
+import mine.demo1.expandtab.ExpandTabDemoActivity;
 import mine.demo1.head.ChooseImgActivity;
 import mine.demo1.imageprocess.ImageProcessActivity;
 import mine.demo1.notification_push.JiGuangNotificationActivity;
@@ -28,18 +30,20 @@ import mine.demo1.okhttp_qcloud.TecentDemoActivity;
 import mine.demo1.pulltorefresh.PullToRefreshActivity;
 import mine.demo1.styledemo.StyleDemoActivity;
 import mine.demo1.util.LogD;
+import mine.demo1.videodemo.VideoDemoActivity;
 import mine.demo1.viewpager_pinchimageview.PagerPinchActivity;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     //跳转页面
-    private Class[] classes = {CalenderTestActivity.class, CheckBoxInRadiogroupActivity.class, CircleProgressbarActivity.class
+    private Class[] classes = {BaiduMapDemoActivity.class,CalenderTestActivity.class, CheckBoxInRadiogroupActivity.class, CircleProgressbarActivity.class
             , FirstActivity.class, Dialog.class, ChooseImgActivity.class, ImageProcessActivity.class, PullToRefreshActivity.class
             , PagerPinchActivity.class, XinGeNotificationActivity.class, JiGuangNotificationActivity.class
-            , StyleDemoActivity.class, TecentDemoActivity.class, OkHttpActivity.class};
+            , StyleDemoActivity.class, TecentDemoActivity.class, OkHttpActivity.class, ExpandTabDemoActivity.class
+            , VideoDemoActivity.class};
 
-    private String[] demoNames = {"日历", "checkbox在radiogroup的事件", "圆环进度条", "页面跳转", "无背景对话框"
+    private String[] demoNames = {"百度地图","日历", "checkbox在radiogroup的事件", "圆环进度条", "页面跳转", "无背景对话框"
             , "头像选择", "图片分区压缩", "上拉加载|下拉刷新", "viewPager中图片_可放大", "腾讯信鸽"
-            , "极光推送", "XML风格", "腾讯云视频获取测试","OKHTTP测试"};
+            , "极光推送", "XML风格", "腾讯云视频获取测试", "OKHTTP测试", "收缩控件测试","语音测试"};
     private ListView listView;
     private ArrayAdapter<String> adapter;
 
@@ -57,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, demoNames);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(this);
-        setXinGePush();//完成信鸽服务的启动与APP注册过程
+//        setXinGePush();//完成信鸽服务的启动与APP注册过程
     }
 
     /**

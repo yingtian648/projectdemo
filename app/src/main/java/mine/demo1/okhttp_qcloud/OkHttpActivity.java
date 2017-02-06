@@ -1,16 +1,12 @@
 package mine.demo1.okhttp_qcloud;
 
-import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -23,12 +19,13 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import mine.demo1.R;
 import mine.demo1.okhttp_qcloud.https.OkHttpUtils;
 import mine.demo1.okhttp_qcloud.https.callback.StringCallback;
 
 public class OkHttpActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    private String[] names = {"成都", "资中", "资阳","福州"};
+    private String[] names = {"成都", "资中", "资阳", "福州","拉萨","黑龙江","乌鲁木齐","海口","上海"};
     private final String BaseUrl = "http://apis.baidu.com/apistore/weatherservice/citylist";
     private final String BaseUrl1 = "http://apis.baidu.com/apistore/weatherservice/weather";
     private final String apikey = "1b003ee9be62dfbef84e61ff07f54bc2";
@@ -51,7 +48,7 @@ public class OkHttpActivity extends AppCompatActivity implements AdapterView.OnI
 
     private void initView() {
         spinner.setOnItemSelectedListener(this);
-        spinner.setPopupBackgroundResource(R.color.course_num_after);
+//        spinner.setPopupBackgroundResource(R.color.course_num_after);
     }
 
     private void initData() {
@@ -64,7 +61,7 @@ public class OkHttpActivity extends AppCompatActivity implements AdapterView.OnI
     }
 
     private void initAdapter() {
-        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,android.R.id.text1,data);
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, data);
     }
 
     @Override
@@ -80,61 +77,61 @@ public class OkHttpActivity extends AppCompatActivity implements AdapterView.OnI
     private void getCity(String placeName) {
         OkHttpUtils.get()
                 .url(BaseUrl)
-                .addHeader("apikey",apikey)
+                .addHeader("apikey", apikey)
                 .params(getparmas(placeName))
                 .build()
                 .execute(new StringCallback() {
-            @Override
-            public void onError(Request request, Exception e) {
-                Log.d("------------>", "城市_请求错误：" + e.getMessage());
-            }
+                    @Override
+                    public void onError(Request request, Exception e) {
+                        Log.d("------------>", "城市_请求错误：" + e.getMessage());
+                    }
 
-            @Override
-            public void onResponse(String response) {
-                Log.d("------------>", "城市_请求返回：" + response);
-                OkCityResult result = gson.fromJson(response, OkCityResult.class);
-                if (result != null && result.getErrNum() == 0 && result.getRetData() != null
-                        && result.getRetData().size() > 0) {
-                    OkCityResult.RetDataBean bean = result.getRetData().get(0);
-                    getWeather(bean.getName_en());
-                }
-            }
-        });
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("------------>", "城市_请求返回：" + response);
+                        OkCityResult result = gson.fromJson(response, OkCityResult.class);
+                        if (result != null && result.getErrNum() == 0 && result.getRetData() != null
+                                && result.getRetData().size() > 0) {
+                            OkCityResult.RetDataBean bean = result.getRetData().get(0);
+                            getWeather(bean.getName_en());
+                        }
+                    }
+                });
     }
 
     private void getWeather(String nameEn) {
         OkHttpUtils.get()
                 .url(BaseUrl1)
-                .addHeader("apikey",apikey)
+                .addHeader("apikey", apikey)
                 .params(getparmas1(nameEn))
                 .build()
                 .execute(new StringCallback() {
-            @Override
-            public void onError(Request request, Exception e) {
-                Log.d("------------>", "天气——请求错误：" + e.getMessage());
-            }
+                    @Override
+                    public void onError(Request request, Exception e) {
+                        Log.d("------------>", "天气——请求错误：" + e.getMessage());
+                    }
 
-            @Override
-            public void onResponse(String response) {
-                Log.d("------------>", "天气——请求返回：" + response);
-                OkWeatherResult result = gson.fromJson(response, OkWeatherResult.class);
-                if (result != null && result.getErrNum() == 0) {
-                    OkWeatherResult.RetDataBean bean = result.getRetData();
-                    if (bean == null) return;
-                    tvShow.setText(
-                            "城市："+bean.getCity()+"\n"+
-                            "日期："+bean.getDate()+"\n"+
-                            "经度："+bean.getLongitude()+"\n"+
-                            "纬度："+bean.getLatitude()+"\n"+
-                            "海拔："+bean.getAltitude()+"\n"+
-                            "天气："+bean.getWeather()+"\n"+
-                            "气温："+bean.getL_tmp()+"℃ ~ "+bean.getH_tmp()+"℃\n"+
-                            "风力："+bean.getWS()+"\n"+
-                            "风向："+bean.getWD()
-                    );
-                }
-            }
-        });
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("------------>", "天气——请求返回：" + response);
+                        OkWeatherResult result = gson.fromJson(response, OkWeatherResult.class);
+                        if (result != null && result.getErrNum() == 0) {
+                            OkWeatherResult.RetDataBean bean = result.getRetData();
+                            if (bean == null) return;
+                            tvShow.setText(
+                                    "城市：" + bean.getCity() + "\n" +
+                                            "日期：" + bean.getDate() + "\n" +
+                                            "经度：" + bean.getLongitude() + "\n" +
+                                            "纬度：" + bean.getLatitude() + "\n" +
+                                            "海拔：" + bean.getAltitude() + "\n" +
+                                            "天气：" + bean.getWeather() + "\n" +
+                                            "气温：" + bean.getL_tmp() + "℃ ~ " + bean.getH_tmp() + "℃\n" +
+                                            "风力：" + bean.getWS() + "\n" +
+                                            "风向：" + bean.getWD()
+                            );
+                        }
+                    }
+                });
     }
 
     private Map<String, String> getparmas1(String citypinyin) {
@@ -147,5 +144,10 @@ public class OkHttpActivity extends AppCompatActivity implements AdapterView.OnI
         Map<String, String> parmas = new HashMap<>();
         parmas.put("cityname", placeName);
         return parmas;
+    }
+
+    @OnClick(R.id.btnExit)
+    public void onClick() {
+        finish();
     }
 }

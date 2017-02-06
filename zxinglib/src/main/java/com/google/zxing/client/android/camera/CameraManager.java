@@ -292,7 +292,8 @@ public final class CameraManager {
                 height = screenResolution.y;
             }
             int leftOffset = (screenResolution.x - width) / 2;
-            int topOffset = (screenResolution.y - height) / 2;
+            //修改取景框到屏幕顶部的位置
+            int topOffset = (screenResolution.y - height) * 2 / 5;
             framingRect = new Rect(leftOffset, topOffset, leftOffset + width, topOffset + height);
             Log.d(TAG, "Calculated manual framing rect: " + framingRect);
             framingRectInPreview = null;
